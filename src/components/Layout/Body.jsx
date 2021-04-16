@@ -4,8 +4,11 @@ import Headermenu from "./Headermenu";
 import Sidebar from "./Sidebar";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Home from '../Home';
-
+import brand_add from '../pages/brand_add';
 import Login from '../auth/Login';
+import category_add from '../pages/category_add';
+import subcategory_add from '../pages/subcategory_add';
+import product_add from '../pages/product_add';
 
 class Body extends Component {
     state ={
@@ -34,6 +37,10 @@ class Body extends Component {
                         <Sidebar user={this.state.user} setUser={this.setUser}/>
                         <Switch>                           
                             <Route exact path="/"  component={() =>  <Home  user={this.state.user} setUser={this.setUser} />} />
+                            <Route exact path="/brand_add"  component={brand_add} />
+                            <Route exact path="/category_add"  component={category_add} />
+                            <Route exact path="/subcategory_add"  component={subcategory_add} />
+                            <Route exact path="/product_add"  component={product_add} />
                         </Switch>
                     </Router>                   
                 </div>
